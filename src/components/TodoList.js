@@ -22,8 +22,8 @@ function TodoList() {
       <button onClick={addItem}>Add</button>
       <ul>
         {items.map((item, index) => (
-          <TodoListItem key={index} task={item} />
-        )}
+          <TodoListItem keys={index} task={item} />
+        ))}
       </ul>
     </div>
   );
