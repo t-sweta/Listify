@@ -10,6 +10,7 @@ export default function TodoListItem(props) {
                     <p>{props.task}</p>
                 </div>
                 <div className="right">
+                    <i class="fa-regular fa-star"></i>
                     <i class="fa-regular fa-pen-to-square"></i>
                     <i class="fa-regular fa-trash-can"></i>
                 </div>
