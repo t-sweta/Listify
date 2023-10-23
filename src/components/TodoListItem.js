@@ -2,11 +2,12 @@ import React from "react";
 import './TodoListItem.css';
 
 export default function TodoListItem(props) {
+    let idx=props.keys;
     return (
-        <li key={props.keys}>
+        <li key={idx}>
             <div className="tasks">
                 <div className="left">
-                    <i class="fa-regular fa-circle"></i>
+                    <i class="fa-regular fa-circle" ></i>
                     <p>{props.task}</p>
                 </div>
                 <div className="right">
