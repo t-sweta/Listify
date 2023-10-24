@@ -42,19 +42,33 @@ function TodoList() {
     setItems(updatedItems);
   };
   const priorityHandler = (index) => {
-    let myObj = {
-      text: items[index].text,
-      completed: items[index].completed,
-      bookmark: !items[index].bookmark,
-    };
+    // let myObj = {
+    //   text: items[index].text,
+    //   completed: items[index].completed,
+    //   bookmark: !items[index].bookmark,
+    // };
     
-    if(myObj.bookmark){
-      const updatedItems = [myObj, ...items];
-      updatedItems.splice(index+1, 1);
-      setItems(updatedItems);
-
-      
+    // if(myObj.bookmark){
+    //   const updatedItems = [myObj, ...items];
+    //   updatedItems.splice(index+1, 1);
+    //   setItems(updatedItems);
+    //   items[0].bookmark=!items[0].bookmark; 
+    
+    const updatedItems = [...items];
+    const itemToMove = updatedItems[index];
+    //here we are setting the bookmark property of the clicked item to true
+    // and we are setting the new items's bookmark property rather than the actual bookmark hence actual bookmark will always be true so no need to make it false afterwards
+    itemToMove.bookmark = !itemToMove.bookmark;
+    updatedItems.splice(index, 1);
+    //adding the item to the top
+    if(itemToMove.bookmark){
+      updatedItems.unshift(itemToMove);
     }
+    setItems(updatedItems);
+    
+
+   
+  
   };
   return (
     <div className="container">
