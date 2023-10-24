@@ -9,8 +9,8 @@ function TodoList() {
 
   const addItem = () => {
     if (newItems) {
-      setItems([...items, newItems])
-      setNewItems("")
+      setItems([...items, { text: newItems, completed: false }]);
+      setNewItems("");
     }
   }
 
@@ -21,21 +21,21 @@ function TodoList() {
   }
 
   const editHandler = (index) => {
-    setUpdatedText(items[index]);
+    setUpdatedText(items[index].text);
     setEditIndex(index);
   }
 
   const saveEdit = (index) => {
     const updatedItems = [...items];
-    updatedItems[index] = updatedText;
+    updatedItems[index].text = updatedText;
     setItems(updatedItems);
     setEditIndex(-1);
     setUpdatedText("");
   }
 
-  const completeTaskHandler=(index)=>{
-    const updatedItems=[...items];
-    updatedItems[index].completed=!updatedItems[index].completed;
+  const completeTaskHandler = (index) => {
+    const updatedItems = [...items];
+    updatedItems[index].completed = !updatedItems[index].completed;
     setItems(updatedItems);
   }
 
@@ -55,8 +55,14 @@ function TodoList() {
           <li key={index}>
             <div className="tasks">
               <div className="left">
-                {item.completed===true ? (<i class="fa-regular fa-circle" onClick={()=>completeTaskHandler(index, false)}></i>):
-                (<i class="fa-regular fa-circle-check" onClick={completeTaskHandler(index, true)}></i>)}
+                <i
+                  className={
+                    item.completed
+                      ? "fa-regular fa-circle-check"
+                      : "fa-regular fa-circle"
+                  }
+                  onClick={() => completeTaskHandler(index)}
+                ></i>
                 {editIndex === index ? (
                   <div>
                     <input
@@ -66,7 +72,9 @@ function TodoList() {
                       onChange={(e) => setUpdatedText(e.target.value)}
                     />
                   </div>
-                ) : (<p className="actual-task">{item}</p>)}
+                ) : (
+                  <p className="actual-task">{item.text}</p>
+                )}
               </div>
               <div className="right">
                 <i class="fa-regular fa-star"></i>
@@ -85,4 +93,5 @@ function TodoList() {
   );
 }
 
-export default TodoList
+export default TodoList;
+
