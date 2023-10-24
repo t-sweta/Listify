@@ -91,6 +91,11 @@ function TodoList() {
 
     setItems(updatedItems);
   };
+  const handleInput = (e) => {
+    if(e.key === "Enter"){
+      addItem();
+    }
+  };
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -100,6 +105,8 @@ function TodoList() {
           value={newItems}
           onChange={(e) => setNewItems(e.target.value)}
           placeholder="Add new task"
+          onKeyDown={handleInput}
+
         />
         <div className="button" onClick={addItem}>
           Add
