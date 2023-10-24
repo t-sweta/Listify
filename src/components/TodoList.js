@@ -50,7 +50,6 @@ function TodoList() {
             <div className="tasks">
               <div className="left">
                 <i class="fa-regular fa-circle"></i>
-
                 {editIndex === index ? (
                   <div>
                     <input
