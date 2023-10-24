@@ -96,6 +96,11 @@ function TodoList() {
       addItem();
     }
   };
+  const handleEditKeyDown = (e, index) => {
+    if(e.key === "Enter"){
+      saveEdit(index);
+    }
+  }
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -132,6 +137,7 @@ function TodoList() {
                       type="text"
                       value={updatedText}
                       onChange={(e) => setUpdatedText(e.target.value)}
+                      onKeyDown={(e)=> handleEditKeyDown(e, index)}
                     />
                   </div>
                 ) : (
