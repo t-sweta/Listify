@@ -81,7 +81,7 @@ function TodoList() {
     }
     setItems(updatedItems);
     */
-    // const priorityHandler = (index) => {
+    
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
