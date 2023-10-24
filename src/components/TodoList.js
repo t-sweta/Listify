@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import TodoListItem from "./TodoListItem";
 import './TodoList.css';
 
 function TodoList() {
@@ -47,7 +46,6 @@ function TodoList() {
       </div>
       <ul>
         {items.map((item, index) => (
-          // <TodoListItem keys={index} task={item} />
           <li key={index}>
             <div className="tasks">
               <div className="left">
