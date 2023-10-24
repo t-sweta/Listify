@@ -110,3 +110,18 @@ p {
 .completed{
     text-decoration: line-through;
 }
+.complete-check{
+    color: #3B9464;
+}
+.delete-icon{
+    color: #DA4747;
+}
+.delete-icon:hover{
+    opacity: .7;
+}
+.edit-icon{
+    color: #CEBEA4;
+}
+.tick-icon{
+    color: #3B9464;
+}
