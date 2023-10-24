@@ -53,6 +53,7 @@ function TodoList() {
                 {editIndex === index ? (
                   <div>
                     <input
+                      className="edit-input"
                       type="text"
                       value={updatedText}
                       onChange={(e) => setUpdatedText(e.target.value)}
@@ -65,7 +66,7 @@ function TodoList() {
                 {editIndex !== index ? (
                   <i class="fa-regular fa-pen-to-square" onClick={() => editHandler(index)}></i>
                 ) : (
-                  <div className="btn" onClick={() => saveEdit(index)}>Save</div>
+                  <i class="fa-solid fa-check" onClick={() => saveEdit(index)}></i>
                 )}
                 <i class="fa-regular fa-trash-can" onClick={() => deleteItem(index)}></i>
               </div>
