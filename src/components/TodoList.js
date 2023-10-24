@@ -78,7 +78,7 @@ function TodoList() {
                 <i
                   className={
                     item.completed
-                      ? "fa-regular fa-circle-check"
+                      ? "fa-regular fa-circle-check complete-check" 
                       : "fa-regular fa-circle"
                   }
                   onClick={() => completeTaskHandler(index)}
@@ -99,20 +99,11 @@ function TodoList() {
               <div className="right">
                 <i class="fa-regular fa-star" onClick={() => priorityHandler(index)}></i>
                 {editIndex !== index ? (
-                  <i
-                    class="fa-regular fa-pen-to-square"
-                    onClick={() => editHandler(index)}
-                  ></i>
+                  <i class="fa-regular fa-pen-to-square edit-icon" onClick={() => editHandler(index)}></i>
                 ) : (
-                  <i
-                    class="fa-solid fa-check"
-                    onClick={() => saveEdit(index)}
-                  ></i>
+                  <i class="fa-solid fa-check tick-icon" onClick={() => saveEdit(index)}></i>
                 )}
-                <i
-                  class="fa-regular fa-trash-can"
-                  onClick={() => deleteItem(index)}
-                ></i>
+                <i class="fa-regular fa-trash-can delete-icon" onClick={() => deleteItem(index)}></i>
               </div>
             </div>
           </li>
