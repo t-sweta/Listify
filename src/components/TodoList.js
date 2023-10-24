@@ -47,13 +47,13 @@ function TodoList() {
     //   completed: items[index].completed,
     //   bookmark: !items[index].bookmark,
     // };
-    
+
     // if(myObj.bookmark){
     //   const updatedItems = [myObj, ...items];
     //   updatedItems.splice(index+1, 1);
     //   setItems(updatedItems);
-    //   items[0].bookmark=!items[0].bookmark; 
-    
+    //   items[0].bookmark=!items[0].bookmark;
+
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     //here we are setting the bookmark property of the clicked item to true
@@ -61,14 +61,10 @@ function TodoList() {
     itemToMove.bookmark = !itemToMove.bookmark;
     updatedItems.splice(index, 1);
     //adding the item to the top
-    if(itemToMove.bookmark){
+    if (itemToMove.bookmark) {
       updatedItems.unshift(itemToMove);
     }
     setItems(updatedItems);
-    
-
-   
-  
   };
   return (
     <div className="container">
@@ -92,7 +88,7 @@ function TodoList() {
                 <i
                   className={
                     item.completed
-                      ? "fa-regular fa-circle-check complete-check" 
+                      ? "fa-regular fa-circle-check complete-check"
                       : "fa-regular fa-circle"
                   }
                   onClick={() => completeTaskHandler(index)}
@@ -111,13 +107,25 @@ function TodoList() {
                 )}
               </div>
               <div className="right">
-                <i class="fa-regular fa-star" onClick={() => priorityHandler(index)}></i>
+                <i
+                  class="fa-regular fa-star"
+                  onClick={() => priorityHandler(index)}
+                ></i>
                 {editIndex !== index ? (
-                  <i class="fa-regular fa-pen-to-square edit-icon" onClick={() => editHandler(index)}></i>
+                  <i
+                    class="fa-regular fa-pen-to-square edit-icon"
+                    onClick={() => editHandler(index)}
+                  ></i>
                 ) : (
-                  <i class="fa-solid fa-check tick-icon" onClick={() => saveEdit(index)}></i>
+                  <i
+                    class="fa-solid fa-check tick-icon"
+                    onClick={() => saveEdit(index)}
+                  ></i>
                 )}
-                <i class="fa-regular fa-trash-can delete-icon" onClick={() => deleteItem(index)}></i>
+                <i
+                  class="fa-regular fa-trash-can delete-icon"
+                  onClick={() => deleteItem(index)}
+                ></i>
               </div>
             </div>
           </li>
