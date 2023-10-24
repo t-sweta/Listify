@@ -33,6 +33,12 @@ function TodoList() {
     setUpdatedText("");
   }
 
+  const completeTaskHandler=(index)=>{
+    const updatedItems=[...items];
+    updatedItems[index].completed=!updatedItems[index].completed;
+    setItems(updatedItems);
+  }
+
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -49,7 +55,8 @@ function TodoList() {
           <li key={index}>
             <div className="tasks">
               <div className="left">
-                <i class="fa-regular fa-circle"></i>
+                {item.completed===true ? (<i class="fa-regular fa-circle" onClick={()=>completeTaskHandler(index, false)}></i>):
+                (<i class="fa-regular fa-circle-check" onClick={completeTaskHandler(index, true)}></i>)}
                 {editIndex === index ? (
                   <div>
                     <input
@@ -59,7 +66,7 @@ function TodoList() {
                       onChange={(e) => setUpdatedText(e.target.value)}
                     />
                   </div>
-                ) : (<p>{item}</p>)}
+                ) : (<p className="actual-task">{item}</p>)}
               </div>
               <div className="right">
                 <i class="fa-regular fa-star"></i>
