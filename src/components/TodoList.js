@@ -53,7 +53,7 @@ function TodoList() {
     //   updatedItems.splice(index+1, 1);
     //   setItems(updatedItems);
     //   items[0].bookmark=!items[0].bookmark;
-
+   /*
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     //here we are setting the bookmark property of the clicked item to true
@@ -65,6 +65,22 @@ function TodoList() {
       updatedItems.unshift(itemToMove);
     }
     setItems(updatedItems);
+    */
+   
+    const updatedItems = [...items];
+    const itemToMove = updatedItems[index];
+    itemToMove.bookmark = !itemToMove.bookmark;
+    if(itemToMove.bookmark){
+      //if so then move it to the top
+      updatedItems.splice(index,1);//removing the item form its current position
+      updatedItems.unshift(itemToMove);
+    }else{
+      // if its unmarked,move it to the original position
+      updatedItems.splice(index,1);
+      updatedItems.push(itemToMove);
+    }
+    setItems(updatedItems);
+
   };
   return (
     <div className="container">
