@@ -53,7 +53,7 @@ function TodoList() {
     //   updatedItems.splice(index+1, 1);
     //   setItems(updatedItems);
     //   items[0].bookmark=!items[0].bookmark;
-   /*
+    /*
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     //here we are setting the bookmark property of the clicked item to true
@@ -66,7 +66,7 @@ function TodoList() {
     }
     setItems(updatedItems);
     */
-   
+    /*Attemp2
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
@@ -80,7 +80,16 @@ function TodoList() {
       updatedItems.push(itemToMove);
     }
     setItems(updatedItems);
+    */
+    // const priorityHandler = (index) => {
+    const updatedItems = [...items];
+    const itemToMove = updatedItems[index];
+    itemToMove.bookmark = !itemToMove.bookmark;
 
+    // Sort the items based on the bookmark property
+    updatedItems.sort((a, b) => b.bookmark - a.bookmark);
+
+    setItems(updatedItems);
   };
   return (
     <div className="container">
