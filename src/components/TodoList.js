@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import TodoListItem from "./TodoListItem";
+// import TodoListItem from "./TodoListItem";
 import './TodoList.css';
 
 function TodoList() {
   const [items, setItems] = useState([]);
   const [newItems, setNewItems] = useState("");
+  const [updatedText, setUpdatedText] = useState("");
+  const [editIndex, setEditIndex] = useState(-1);
+
   const addItem = () => {
     if (newItems) {
       setItems([...items, newItems])
@@ -12,10 +15,23 @@ function TodoList() {
     }
   }
 
-  const deleteItem=(index)=>{
-    const updatedItems=[...items];
+  const deleteItem = (index) => {
+    const updatedItems = [...items];
     updatedItems.splice(index, 1);
     setItems(updatedItems);
+  }
+
+  const editHandler = (index) => {
+    setUpdatedText(items[index]);
+    setEditIndex(index);
+  }
+
+  const saveEdit = (index) => {
+    const updatedItems = [...items];
+    updatedItems[index] = updatedText;
+    setItems(updatedItems);
+    setEditIndex(-1);
+    setUpdatedText("");
   }
 
   return (
@@ -36,12 +52,25 @@ function TodoList() {
             <div className="tasks">
               <div className="left">
                 <i class="fa-regular fa-circle"></i>
-                <p>{item}</p>
+
+                {editIndex === index ? (
+                  <div>
+                    <input
+                      type="text"
+                      value={updatedText}
+                      onChange={(e) => setUpdatedText(e.target.value)}
+                    />
+                  </div>
+                ) : (<p>{item}</p>)}
               </div>
               <div className="right">
                 <i class="fa-regular fa-star"></i>
-                <i class="fa-regular fa-pen-to-square"></i>
-                <i class="fa-regular fa-trash-can" onClick={()=> deleteItem(index)}></i>
+                {editIndex !== index ? (
+                  <i class="fa-regular fa-pen-to-square" onClick={() => editHandler(index)}></i>
+                ) : (
+                  <div className="btn" onClick={() => saveEdit(index)}>Save</div>
+                )}
+                <i class="fa-regular fa-trash-can" onClick={() => deleteItem(index)}></i>
               </div>
             </div>
           </li>
