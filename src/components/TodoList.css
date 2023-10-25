@@ -40,10 +40,14 @@ input:focus {
     color: white;
     background-color: #2e2e2e;
     height: 25px;
-    width: 300px;
+    width: 80%;
     position: relative;
     bottom: 5px;
     padding: 5px;
+}
+
+.right-task {
+    width: 100%;
 }
 
 .button {
@@ -135,9 +139,9 @@ p {
     color: #3b9464;
 }
 
-@media (min-width: 0px) and (max-width: 950px) {
+@media (min-width: 0px) and (max-width: 1000px) {
     .container {
-        width: 100%;
+        width: 75%;
         margin-top: 150px;
     }
 
@@ -146,11 +150,11 @@ p {
     }
 
     .input input {
-        width: 70%;
+        width: 80%;
     }
 
     .button {
-        width: 30%;
+        width: 15%;
     }
 
     ul {
@@ -179,5 +183,10 @@ p {
         display: flex;
         flex-direction: row;
         margin-right: 1px;
+    }
+
+    .fa-regular {
+        position: relative;
+        top: 5px;
     }
 }
