@@ -6,6 +6,7 @@ function TodoList() {
   const [newItems, setNewItems] = useState("");
   const [updatedText, setUpdatedText] = useState("");
   const [editIndex, setEditIndex] = useState(-1);
+
   //adding data from local storage on initial render
   useEffect(() => {
     const savedData = localStorage.getItem("todolist");
@@ -16,15 +17,11 @@ function TodoList() {
 
   const addItem = () => {
     if (newItems) {
-      // setItems([
-      //   ...items,
-      //   { text: newItems, completed: false, bookmark: false },
-      // ]);
-      // setNewItems("");
       const newItem = { text: newItems, completed: false, bookmark: false };
       const updatedItems = [...items, newItem];
       setItems(updatedItems);
       setNewItems("");
+
       //saving the updated items to local storage
       localStorage.setItem("todolist", JSON.stringify(updatedItems));
     }
@@ -34,6 +31,7 @@ function TodoList() {
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
     setItems(updatedItems);
+
     //saving the updated items to local storage
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
@@ -49,50 +47,21 @@ function TodoList() {
     setItems(updatedItems);
     setEditIndex(-1);
     setUpdatedText("");
+
     //saving the updated items to local storage
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
-  // //local storage
-  // useEffect(()=>{
-  //   let savedTodo = JSON.parse(localStorage.getItem('todolist'));
-  //   if(savedTodo){
-  //     setToDos(savedTodo)
-  //   }
-  // },[])
 
   const completeTaskHandler = (index) => {
     const updatedItems = [...items];
     updatedItems[index].completed = !updatedItems[index].completed;
     setItems(updatedItems);
+
     //saving the updated items to local storage
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
-  const priorityHandler = (index) => {
-    // let myObj = {
-    //   text: items[index].text,
-    //   completed: items[index].completed,
-    //   bookmark: !items[index].bookmark,
-    // };
 
-    // if(myObj.bookmark){
-    //   const updatedItems = [myObj, ...items];
-    //   updatedItems.splice(index+1, 1);
-    //   setItems(updatedItems);
-    //   items[0].bookmark=!items[0].bookmark;
-    /*
-    const updatedItems = [...items];
-    const itemToMove = updatedItems[index];
-    //here we are setting the bookmark property of the clicked item to true
-    // and we are setting the new items's bookmark property rather than the actual bookmark hence actual bookmark will always be true so no need to make it false afterwards
-    itemToMove.bookmark = !itemToMove.bookmark;
-    updatedItems.splice(index, 1);
-    //adding the item to the top
-    if (itemToMove.bookmark) {
-      updatedItems.unshift(itemToMove);
-    }
-    setItems(updatedItems);
-    */
-    /*Attemp2 */
+  const priorityHandler = (index) => {
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
@@ -107,29 +76,22 @@ function TodoList() {
     }
     setItems(updatedItems);
 
-    /*
-    const updatedItems = [...items];
-    const itemToMove = updatedItems[index];
-    itemToMove.bookmark = !itemToMove.bookmark;
-
-    // Sort the items based on the bookmark property
-    updatedItems.sort((a, b) => b.bookmark - a.bookmark);
-
-    setItems(updatedItems);
-    */
     //saving the updated items to local storage
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
+
   const handleInput = (e) => {
     if (e.key === "Enter") {
       addItem();
     }
   };
+
   const handleEditKeyDown = (e, index) => {
     if (e.key === "Enter") {
       saveEdit(index);
     }
   };
+
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -174,7 +136,6 @@ function TodoList() {
               </div>
               <div className="right">
                 <i
-                  // class="fa-regular fa-star"
                   className={
                     item.bookmark
                       ? "fa-regular fa-star colored-star"
