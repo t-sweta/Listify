@@ -1,14 +1,11 @@
 .title {
-  /* background: -webkit-linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
   color: white;
   margin-bottom: 15px;
 }
 
 .container {
-  /* border: 1px solid white; */
   width: 75%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   margin-top: 150px;
@@ -50,7 +47,6 @@ input:focus {
 }
 
 .button {
-  /* margin-right: 15px; */
   margin: 5px;
   height: 80%;
   width: 15%;
@@ -79,12 +75,10 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
-  /* border: 1px solid grey; */
 }
 
 li {
   text-decoration: none;
-  /* border: 1px solid purple; */
 }
 
 .left {
