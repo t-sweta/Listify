@@ -35,7 +35,7 @@ function TodoList() {
     updatedItems.splice(index, 1);
     setItems(updatedItems);
     //saving the updated items to local storage
-    localStorage.setItems("todolist", JSON.stringify(updatedItems));
+    localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
 
   const editHandler = (index) => {
@@ -50,7 +50,7 @@ function TodoList() {
     setEditIndex(-1);
     setUpdatedText("");
     //saving the updated items to local storage
-    localStorage.setItems("todolist", JSON.stringify(updatedItems));
+    localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
   // //local storage
   // useEffect(()=>{
