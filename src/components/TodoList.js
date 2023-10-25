@@ -121,7 +121,7 @@ function TodoList() {
                   onClick={() => completeTaskHandler(index)}
                 ></i>
                 {editIndex === index ? (
-                  <div>
+                  <div className="right-task">
                     <input
                       className="edit-input"
                       type="text"
