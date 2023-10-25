@@ -107,7 +107,7 @@ function TodoList() {
           Add
         </div>
       </div>
-      <ul>
+      <ul className="all-tasks">
         {items.map((item, index) => (
           <li key={index}>
             <div className="tasks">
