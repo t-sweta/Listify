@@ -94,11 +94,11 @@ p {
 }
 
 .left i {
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
 .right i {
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
 .completed {
@@ -133,4 +133,51 @@ p {
     text-decoration: line-through;
     text-decoration-color: #3b9464;
     color: #3b9464;
+}
+
+@media (min-width: 0px) and (max-width: 950px) {
+    .container {
+        width: 100%;
+        margin-top: 150px;
+    }
+
+    .input {
+        width: 70%;
+    }
+
+    .input input {
+        width: 70%;
+    }
+
+    .button {
+        width: 30%;
+    }
+
+    ul {
+        width: 90%;
+    }
+
+    .all-tasks {
+        width: 70%;
+    }
+
+    .tasks {
+        margin-top: 15px;
+        height: auto;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        margin-right: 1px;
+    }
 }
