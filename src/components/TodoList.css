@@ -121,3 +121,8 @@ p {
 .colored-star {
   color: goldenrod;
 }
+.complete-line{
+    text-decoration: line-through;
+    text-decoration-color: #3b9464;
+    color: #3b9464;
+}
