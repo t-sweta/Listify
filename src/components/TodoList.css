@@ -1,127 +1,135 @@
 .title {
-  color: white;
-  margin-bottom: 15px;
+    color: white;
+    margin-bottom: 15px;
 }
 
 .container {
-  width: 75%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 150px;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
 }
 
 .input {
-  background-color: #2e2e2e;
-  width: 70%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
-  border: none;
+    background-color: #2e2e2e;
+    width: 70%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: none;
 }
 
 input:focus {
-  outline: none;
+    outline: none;
 }
 
 .input input {
-  width: 80%;
-  height: 100%;
-  background-color: #2e2e2e;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  text-decoration: none;
-  padding-left: 10px;
-  color: white;
+    width: 80%;
+    height: 100%;
+    background-color: #2e2e2e;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    text-decoration: none;
+    padding-left: 10px;
+    color: white;
 }
 
 .edit-input {
-  color: white;
-  background-color: #2e2e2e;
-  height: 25px;
-  width: 300px;
-  position: relative;
-  bottom: 5px;
-  padding: 5px;
+    color: white;
+    background-color: #2e2e2e;
+    height: 25px;
+    width: 300px;
+    position: relative;
+    bottom: 5px;
+    padding: 5px;
 }
 
 .button {
-  margin: 5px;
-  height: 80%;
-  width: 15%;
-  background-color: #181717;
-  color: white;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    margin: 5px;
+    height: 80%;
+    width: 15%;
+    background-color: #181717;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:hover {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 ul {
-  list-style-type: none;
-  width: 70%;
+    list-style-type: none;
+    width: 70%;
 }
 
 .tasks {
-  color: white;
-  width: 100%;
-  height: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 25px;
+    color: white;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
 }
 
 li {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .left {
-  display: flex;
-  width: 80%;
+    display: flex;
+    width: 80%;
 }
 
 p {
-  position: relative;
-  bottom: 5px;
-  margin-right: 10px;
-  height: 75%;
+    position: relative;
+    bottom: 5px;
+    margin-right: 10px;
+    height: 75%;
 }
 
 .left i {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 
 .right i {
-  margin-right: 15px;
+    margin-right: 15px;
 }
+
 .completed {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
+
 .complete-check {
-  color: #3b9464;
+    color: #3b9464;
 }
+
 .delete-icon {
-  color: #da4747;
+    color: #da4747;
 }
+
 .delete-icon:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
+
 .edit-icon {
-  color: #cebea4;
+    color: #cebea4;
 }
+
 .tick-icon {
-  color: #3b9464;
+    color: #3b9464;
 }
+
 .colored-star {
-  color: goldenrod;
+    color: goldenrod;
 }
-.complete-line{
+
+.complete-line {
     text-decoration: line-through;
     text-decoration-color: #3b9464;
     color: #3b9464;
