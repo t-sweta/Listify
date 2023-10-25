@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TodoList.css";
 
 function TodoList() {
@@ -6,14 +6,27 @@ function TodoList() {
   const [newItems, setNewItems] = useState("");
   const [updatedText, setUpdatedText] = useState("");
   const [editIndex, setEditIndex] = useState(-1);
+  //adding data from local storage on initial render
+  useEffect(() => {
+    const savedData = localStorage.getItem("todolist");
+    if (savedData) {
+      setItems(JSON.parse(savedData));
+    }
+  }, []);
 
   const addItem = () => {
     if (newItems) {
-      setItems([
-        ...items,
-        { text: newItems, completed: false, bookmark: false },
-      ]);
+      // setItems([
+      //   ...items,
+      //   { text: newItems, completed: false, bookmark: false },
+      // ]);
+      // setNewItems("");
+      const newItem = { text: newItems, completed: false, bookmark: false };
+      const updatedItems = [ ...items, newItem ];
+      setItems(updatedItems);
       setNewItems("");
+      //saving the updated items to local storage
+      localStorage.setItem("todolist", JSON.stringify(updatedItems));
     }
   };
 
@@ -21,6 +34,8 @@ function TodoList() {
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
     setItems(updatedItems);
+    //saving the updated items to local storage
+    localStorage.setItems("todolist", JSON.stringify(updatedItems));
   };
 
   const editHandler = (index) => {
@@ -34,12 +49,23 @@ function TodoList() {
     setItems(updatedItems);
     setEditIndex(-1);
     setUpdatedText("");
+    //saving the updated items to local storage
+    localStorage.setItems("todolist", JSON.stringify(updatedItems));
   };
+  // //local storage
+  // useEffect(()=>{
+  //   let savedTodo = JSON.parse(localStorage.getItem('todolist'));
+  //   if(savedTodo){
+  //     setToDos(savedTodo)
+  //   }
+  // },[])
 
   const completeTaskHandler = (index) => {
     const updatedItems = [...items];
     updatedItems[index].completed = !updatedItems[index].completed;
     setItems(updatedItems);
+    //saving the updated items to local storage
+    localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
   const priorityHandler = (index) => {
     // let myObj = {
@@ -81,7 +107,7 @@ function TodoList() {
     }
     setItems(updatedItems);
     */
-    
+
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
@@ -90,17 +116,19 @@ function TodoList() {
     updatedItems.sort((a, b) => b.bookmark - a.bookmark);
 
     setItems(updatedItems);
+    //saving the updated items to local storage
+    localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
   const handleInput = (e) => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
       addItem();
     }
   };
   const handleEditKeyDown = (e, index) => {
-    if(e.key === "Enter"){
+    if (e.key === "Enter") {
       saveEdit(index);
     }
-  }
+  };
   return (
     <div className="container">
       <h1 className="title">Todo List</h1>
@@ -111,7 +139,6 @@ function TodoList() {
           onChange={(e) => setNewItems(e.target.value)}
           placeholder="Add new task"
           onKeyDown={handleInput}
-
         />
         <div className="button" onClick={addItem}>
           Add
@@ -137,7 +164,7 @@ function TodoList() {
                       type="text"
                       value={updatedText}
                       onChange={(e) => setUpdatedText(e.target.value)}
-                      onKeyDown={(e)=> handleEditKeyDown(e, index)}
+                      onKeyDown={(e) => handleEditKeyDown(e, index)}
                     />
                   </div>
                 ) : (
