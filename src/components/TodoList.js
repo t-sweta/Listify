@@ -92,7 +92,7 @@ function TodoList() {
     }
     setItems(updatedItems);
     */
-    /*Attemp2
+    /*Attemp2 */
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
@@ -106,8 +106,8 @@ function TodoList() {
       updatedItems.push(itemToMove);
     }
     setItems(updatedItems);
-    */
-
+    
+    /*
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
@@ -116,6 +116,7 @@ function TodoList() {
     updatedItems.sort((a, b) => b.bookmark - a.bookmark);
 
     setItems(updatedItems);
+    */
     //saving the updated items to local storage
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
