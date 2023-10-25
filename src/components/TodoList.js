@@ -22,7 +22,7 @@ function TodoList() {
       // ]);
       // setNewItems("");
       const newItem = { text: newItems, completed: false, bookmark: false };
-      const updatedItems = [ ...items, newItem ];
+      const updatedItems = [...items, newItem];
       setItems(updatedItems);
       setNewItems("");
       //saving the updated items to local storage
@@ -96,17 +96,17 @@ function TodoList() {
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
     itemToMove.bookmark = !itemToMove.bookmark;
-    if(itemToMove.bookmark){
+    if (itemToMove.bookmark) {
       //if so then move it to the top
-      updatedItems.splice(index,1);//removing the item form its current position
+      updatedItems.splice(index, 1); //removing the item form its current position
       updatedItems.unshift(itemToMove);
-    }else{
+    } else {
       // if its unmarked,move it to the original position
-      updatedItems.splice(index,1);
+      updatedItems.splice(index, 1);
       updatedItems.push(itemToMove);
     }
     setItems(updatedItems);
-    
+
     /*
     const updatedItems = [...items];
     const itemToMove = updatedItems[index];
@@ -174,7 +174,12 @@ function TodoList() {
               </div>
               <div className="right">
                 <i
-                  class="fa-regular fa-star"
+                  // class="fa-regular fa-star"
+                  className={
+                    item.bookmark
+                      ? "fa-regular fa-star colored-star"
+                      : "fa-regular fa-star"
+                  }
                   onClick={() => priorityHandler(index)}
                 ></i>
                 {editIndex !== index ? (
