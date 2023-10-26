@@ -1,6 +1,5 @@
 # Listify - Advanced Todo List Web App
 
-![Listify Logo](listify-logo.png)
 
 Listify is a powerful and feature-packed todo list web application built with React.js. It's designed to help you organize your tasks and increase your productivity. With Listify, you can manage your to-dos with ease and enjoy a clean, intuitive user interface.
 
@@ -12,7 +11,7 @@ Listify is a powerful and feature-packed todo list web application built with Re
 
 - **Priority Management**: Assign priority levels to tasks and focus on what matters most. Sort and filter tasks by priority.
 
-/*- **Due Dates and Reminders**: Set due dates and receive reminders to ensure you never miss a deadline.*?
+- **Due Dates and Reminders**: Set due dates and receive reminders to ensure you never miss a deadline.
 
 - **Task Notes**: Add detailed notes to your tasks. Keep track of important information related to each task.
 
