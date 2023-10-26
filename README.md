@@ -12,7 +12,7 @@ Listify is a powerful and feature-packed todo list web application built with Re
 
 - **Priority Management**: Assign priority levels to tasks and focus on what matters most. Sort and filter tasks by priority.
 
-- **Due Dates and Reminders**: Set due dates and receive reminders to ensure you never miss a deadline.
+/*- **Due Dates and Reminders**: Set due dates and receive reminders to ensure you never miss a deadline.*?
 
 - **Task Notes**: Add detailed notes to your tasks. Keep track of important information related to each task.
 
@@ -35,14 +35,15 @@ To get started with Listify, follow these steps:
 
 ## Contributing
 
-We welcome contributions from the open-source community. If you'd like to enhance Listify or report issues, please refer to our [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-Listify is open-source software released under the [MIT License](LICENSE). You are free to use, modify, and distribute the application as per the terms of the license.
+We welcome contributions from the open-source community. If you'd like to enhance Listify or report issues, feel free to mail us, and we'll be happy to collaborate.
 
 ## Feedback and Support
 
-If you have any questions, feedback, or need support, please [create an issue](https://github.com/yourusername/listify/issues) in the Listify GitHub repository.
+If you have any questions, feedback, or need support, please contact us via mail given in the Listify GitHub repository.
 
 Happy task management with Listify!
+
+## Authors
+
+Sweta Shreya - swetashreya004@gmail.com
+Sparsh Yadav - sparshyadavmrt@gmail.com
