@@ -28,6 +28,7 @@ input:focus {
 .input input {
     width: 80%;
     height: 100%;
+    border: none;
     background-color: #2e2e2e;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -88,6 +89,14 @@ li {
 .left {
     display: flex;
     width: 80%;
+}
+
+.right{
+    width: 20%;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 p {
@@ -187,7 +196,7 @@ p {
     }
 
     .left {
-        width: 100%;
+        width: 80%;
     }
 
     p {
@@ -198,7 +207,9 @@ p {
     .right {
         display: flex;
         flex-direction: row;
-        margin-right: 1px;
+        width: 20%;
+        /* border: 1px solid white; */
+        /* margin-right: 1px; */
     }
 
     .fa-regular {
