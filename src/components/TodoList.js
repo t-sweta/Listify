@@ -80,15 +80,25 @@ function TodoList() {
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
 
-  const goUp=(index)=>{
-    if(index!==0){
-      const updatedItems=[...items];
-      let temp=updatedItems[index-1];
-      updatedItems[index-1]=updatedItems[index];
-      updatedItems[index]=temp;
+  const goUp = (index) => {
+    if (index !== 0) {
+      const updatedItems = [...items];
+      let temp = updatedItems[index - 1];
+      updatedItems[index - 1] = updatedItems[index];
+      updatedItems[index] = temp;
       setItems(updatedItems);
     }
-  }
+  };
+
+  const goDown = (index) => {
+    if (index !== items.length - 1) {
+      const updatedItems = [...items];
+      let temp = updatedItems[index + 1];
+      updatedItems[index + 1] = updatedItems[index];
+      updatedItems[index] = temp;
+      setItems(updatedItems);
+    }
+  };
 
   const handleInput = (e) => {
     if (e.key === "Enter") {
@@ -121,14 +131,14 @@ function TodoList() {
         {items.map((item, index) => (
           <li key={index}>
             <div className="tasks">
-              <div className="left" onClick={() => completeTaskHandler(index)}>
+              <div className="left">
                 <i
                   className={
                     item.completed
                       ? "fa-regular fa-circle-check complete-check hover"
                       : "fa-regular fa-circle hover"
                   }
-                  // onClick={() => completeTaskHandler(index)}
+                  onClick={() => completeTaskHandler(index)}
                 ></i>
                 {editIndex === index ? (
                   <div className="right-task">
@@ -140,15 +150,21 @@ function TodoList() {
                       onKeyDown={(e) => handleEditKeyDown(e, index)}
                     />
                   </div>
+                ) : item.completed ? (
+                  <p className="actual-task complete-line hover">{item.text}</p>
                 ) : (
-                  item.completed
-                    ? (<p className="actual-task complete-line hover">{item.text}</p>)
-                    : (<p className="actual-task hover">{item.text}</p>)
+                  <p className="actual-task hover">{item.text}</p>
                 )}
               </div>
               <div className="right">
-                <i class="fa-solid fa-chevron-up up-down hover" onClick={()=>goUp(index)}></i>
-                <i class="fa-solid fa-chevron-down up-down hover"></i>
+                <i
+                  class="fa-solid fa-chevron-up up-down hover"
+                  onClick={() => goUp(index)}
+                ></i>
+                <i
+                  class="fa-solid fa-chevron-down up-down hover"
+                  onClick={() => goDown(index)}
+                ></i>
                 <i
                   className={
                     item.bookmark
