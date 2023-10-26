@@ -166,12 +166,12 @@ p {
 
 @media (min-width: 0px) and (max-width: 1000px) {
     .container {
-        width: 75%;
-        margin-top: 150px;
+        width: 100%;
+        margin-top: 50px;
     }
 
     .input {
-        width: 70%;
+        width: 85%;
     }
 
     .input input {
@@ -183,11 +183,11 @@ p {
     }
 
     ul {
-        width: 90%;
+        width: 100%;
     }
 
     .all-tasks {
-        width: 70%;
+        width: 90%;
     }
 
     .tasks {
@@ -207,9 +207,6 @@ p {
     .right {
         display: flex;
         flex-direction: row;
-        width: 20%;
-        /* border: 1px solid white; */
-        /* margin-right: 1px; */
     }
 
     .fa-regular {
