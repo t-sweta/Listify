@@ -113,7 +113,7 @@ function TodoList() {
           placeholder="Add new task"
           onKeyDown={handleInput}
         />
-        <div className="button" onClick={addItem}>
+        <div className="button hover" onClick={addItem}>
           Add
         </div>
       </div>
@@ -121,14 +121,14 @@ function TodoList() {
         {items.map((item, index) => (
           <li key={index}>
             <div className="tasks">
-              <div className="left">
+              <div className="left" onClick={() => completeTaskHandler(index)}>
                 <i
                   className={
                     item.completed
-                      ? "fa-regular fa-circle-check complete-check"
-                      : "fa-regular fa-circle"
+                      ? "fa-regular fa-circle-check complete-check hover"
+                      : "fa-regular fa-circle hover"
                   }
-                  onClick={() => completeTaskHandler(index)}
+                  // onClick={() => completeTaskHandler(index)}
                 ></i>
                 {editIndex === index ? (
                   <div className="right-task">
@@ -142,34 +142,34 @@ function TodoList() {
                   </div>
                 ) : (
                   item.completed
-                    ? (<p className="actual-task complete-line">{item.text}</p>)
-                    : (<p className="actual-task">{item.text}</p>)
+                    ? (<p className="actual-task complete-line hover">{item.text}</p>)
+                    : (<p className="actual-task hover">{item.text}</p>)
                 )}
               </div>
               <div className="right">
-                <i class="fa-solid fa-chevron-up" onClick={()=>goUp(index)}></i>
-                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-up up-down hover" onClick={()=>goUp(index)}></i>
+                <i class="fa-solid fa-chevron-down up-down hover"></i>
                 <i
                   className={
                     item.bookmark
-                      ? "fa-regular fa-star colored-star"
-                      : "fa-regular fa-star"
+                      ? "fa-regular fa-star colored-star hover"
+                      : "fa-regular fa-star hover"
                   }
                   onClick={() => priorityHandler(index)}
                 ></i>
                 {editIndex !== index ? (
                   <i
-                    class="fa-regular fa-pen-to-square edit-icon"
+                    class="fa-regular fa-pen-to-square edit-icon hover"
                     onClick={() => editHandler(index)}
                   ></i>
                 ) : (
                   <i
-                    class="fa-solid fa-check tick-icon"
+                    class="fa-solid fa-check tick-icon hover"
                     onClick={() => saveEdit(index)}
                   ></i>
                 )}
                 <i
-                  class="fa-regular fa-trash-can delete-icon"
+                  class="fa-regular fa-trash-can delete-icon hover"
                   onClick={() => deleteItem(index)}
                 ></i>
               </div>
