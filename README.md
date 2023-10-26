@@ -45,4 +45,5 @@ Happy task management with Listify!
 ## Authors
 
 Sweta Shreya - swetashreya004@gmail.com
+
 Sparsh Yadav - sparshyadavmrt@gmail.com
