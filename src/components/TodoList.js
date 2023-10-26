@@ -80,6 +80,16 @@ function TodoList() {
     localStorage.setItem("todolist", JSON.stringify(updatedItems));
   };
 
+  const goUp=(index)=>{
+    if(index!==0){
+      const updatedItems=[...items];
+      let temp=updatedItems[index-1];
+      updatedItems[index-1]=updatedItems[index];
+      updatedItems[index]=temp;
+      setItems(updatedItems);
+    }
+  }
+
   const handleInput = (e) => {
     if (e.key === "Enter") {
       addItem();
@@ -137,6 +147,8 @@ function TodoList() {
                 )}
               </div>
               <div className="right">
+                <i class="fa-solid fa-chevron-up" onClick={()=>goUp(index)}></i>
+                <i class="fa-solid fa-chevron-down"></i>
                 <i
                   className={
                     item.bookmark
