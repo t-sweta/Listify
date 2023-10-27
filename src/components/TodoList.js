@@ -151,9 +151,9 @@ function TodoList() {
                     />
                   </div>
                 ) : item.completed ? (
-                  <p className="actual-task complete-line hover">{item.text}</p>
+                  <p className="actual-task complete-line">{item.text}</p>
                 ) : (
-                  <p className="actual-task hover">{item.text}</p>
+                  <p className="actual-task">{item.text}</p>
                 )}
               </div>
               <div className="right">
