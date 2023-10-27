@@ -160,12 +160,10 @@ p {
   color: #3b9464;
 }
 
-.complete-line:hover {
-  opacity: 0.7;
-}
 .hover {
   cursor: pointer;
 }
+
 .hover:hover {
   opacity: 0.7;
 }
@@ -279,6 +277,7 @@ p {
     position: relative;
     top: 5px;
   }
+
   .up-down {
     position: relative;
     top: 5px;
