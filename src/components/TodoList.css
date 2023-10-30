@@ -171,11 +171,11 @@ p {
 @media (min-width: 500px) and (max-width: 1000px) {
   .container {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 150px;
   }
 
   .input {
-    width: 100%;
+    width: 80%;
   }
 
   .input input {
