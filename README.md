@@ -23,6 +23,10 @@ Listify is a powerful and feature-packed todo list web application built with Re
 
 - **Responsive Design**: Listify is optimized for both desktop and mobile devices, ensuring a seamless experience on any screen size.
 
+## Screenshot
+![Listify Todo](https://github.com/sparshyadav/Listify/assets/96286051/1ea63bd4-f5ba-4adb-a91e-60d7de699e83)
+
+
 ## Getting Started
 
 To get started with Listify, follow these steps:
